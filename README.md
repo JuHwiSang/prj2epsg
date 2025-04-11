@@ -4,27 +4,27 @@ Fork of https://github.com/lolastudio/prj2epsg
 - Install
 
 ```sh
-npm i prj2epsg
+npm i @juhwisang/prj2epsg
 ```
 
 - From .prj file
 
 ```javascript
-const prj2epsg = require('prj2epsg');
+const { prj2epsg } = require('@juhwisang/prj2epsg');
 const fs = require('fs');
 
-fs.readFile('./myproj.prj', (err, data) => {
-    if(!err) prj2epsg.fromPRJ(data);
+fs.readFile('./myproj.prj', async (err, data) => {
+    if(!err) console.log(await prj2epsg(data));
 });
 ```
 
 - From GEOGCS / PROJCS string
 
 ```javascript
-const prj2epsg = require('prj2epsg');
+const { epsg2prj } = require('@juhwisang/prj2epsg');
 let prj = 'GEOGCS[\"GCS_WGS_1984\",DATUM[\"WGS_1984\",SPHEROID[\"WGS_84\",6378137,298.257223563]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.017453292519943295]]';
 
-prj2epsg.fromPRJ(prj) // 4326
+console.log(await prj2epsg(prj));
 ```
 
 - Methods
