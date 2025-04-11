@@ -1,5 +1,5 @@
 # prj2epsg
-Node.js module for converting .prj files and projcs / geogcs strings to EPSG codes
+Fork of https://github.com/lolastudio/prj2epsg
 
 - Install
 
